@@ -5,7 +5,6 @@ const chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 var expect = chai.expect;
 const EC = protractor.ExpectedConditions;
-const browser = require('browser');
 
 module.exports = function () {
     this.Then(/^I close widget$/, {timeout: 30 * 1000}, async function () {
