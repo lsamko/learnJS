@@ -2,4 +2,5 @@ Feature: find element
 Scenario: go to the site and fin element
 
   Given I navigate to landing page
-  And I close widget
+  #And I close widget
+  Then I navigate to menu

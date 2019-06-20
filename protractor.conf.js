@@ -1,9 +1,12 @@
 exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
     // Capabilities to be passed to the webdriver instance.
-capabilities: {
-    'browserName': 'chrome'
-},
+    capabilities: {
+        'browserName': 'chrome',
+        'chromeOptions': {
+            'args': ['show-fps-counter=true']
+        }
+    },
     // spec location for the cucumber tests
     specs: ['features/findElement.feature'],
 
@@ -23,5 +26,5 @@ capabilities: {
         format: 'pretty'
     },
 
-    ignoreUncaughtExceptions:true
+    ignoreUncaughtExceptions: true
 };
