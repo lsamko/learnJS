@@ -1,14 +1,12 @@
 exports.config = {
+    SELENIUM_PROMISE_MANAGER: false,
     seleniumAddress: 'http://localhost:4444/wd/hub',
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
-        'browserName': 'chrome',
-        'chromeOptions': {
-            'args': ['show-fps-counter=true']
-        }
+        'browserName': 'chrome'
     },
     // spec location for the cucumber tests
-    specs: ['features/findElement.feature'],
+    specs: ['features/steps/findLocator.js'],
 
     // Options to be passed to Jasmine-node.
     jasmineNodeOpts: {
@@ -16,15 +14,5 @@ exports.config = {
         defaultTimeoutInterval: 30000
     },
 
-    framework: 'custom',
-    frameworkPath: require.resolve('protractor-cucumber-framework'),
-
-    cucumberOpts: {
-        require: [
-            'features/steps/step_defs.js'
-        ],
-        format: 'pretty'
-    },
-
-    ignoreUncaughtExceptions: true
+    framework: 'jasmine',
 };
